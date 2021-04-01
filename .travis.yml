@@ -1,8 +1,16 @@
 language: java
 jdk: openjdk11
 env:
-  global:
-    - secure: J0J5gy+JUfjOtdQ5zhcLdpHVncPPjPs2wIAJDUt2g2Kap2KU/vcjzOwkq9WNHh7tRQz4LYdMuuVTp2ZHlZVvUS81PnA2+r6Zy+iKnm1aOvvAiciZ0GM6QKQlGK2Kz0cw9/k4eQYBgNijODu+UqjrzVxagIcniExzT5HnxxTT/ogFUUheYASYDCgTqlW73RrLIzKZEL7Sz4dQcPmQAS1DveWhW9eeZTmPgs1jmcV6Uxtt7X8zd21k35bTO/li+6q24/YF/nzFIZhH6WXxhZGx6S229DalFV0wK01x2Kt6wC00MAfgdvvyXRNZqdHZ6Z/UxzKJkllyPB35G3dHjnSp/prtiNhs67RTAlzIQEsSmhwnNtI1krKFNmcuPAmhptQZlM12bhj3NqTlLwybtBqs73pqcFyq/5VbGPearu3nmuQx8oPV225eRSZtKhT9Pr6rgybE6OtNAP0y/cjK1/jbaRB/yhav8WKbgwyZLiQAYV0r9d9UUgMw2ywxsMv2gK8IAWzkxujcJNPBAJLqtfEKhBUFCOdLq6e3C8mrZtgq3zSRMaAPoXRm+AMeWHfJNvAnh1GBCzQNxE8Smkv7/55YsTAgbrBz944IiB2NQ0Ybllioxdlenc6MYLqI0XfqXKD+a8pYFWGbHFall32rj3p667zyakOIYSx82tUL9YDJxUg=
+  - NODE_VERSION="10"
+
+before_install:
+  - nvm install $NODE_VERSION
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache
+
 addons:
   sonarcloud:
     organization: 'henri-pyykkonen'
